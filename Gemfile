@@ -19,6 +19,9 @@ gem 'sequenced'
 gem 'dragonfly', '~> 1.0.12'
 gem 'image_size'
 
+# Adding rack attach to whitelist IP
+gem 'rack-attack'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
