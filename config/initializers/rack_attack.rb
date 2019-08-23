@@ -1,7 +1,10 @@
+if ENV["IP_WHITELIST"].present?
 
-Rack::Attack.safelist_ip("38.140.55.234")
+  allowed = Set.new[ENV["IP_WHITELIST"]]
 
-Rack::Attack.blocklist("block all access") do |request|
-  # Requests are blocked if the return value is truthy
-  request.path.start_with?("/")
+  Rack::Attack.blocklist("block all access") do |req|
+    # Requests are blocked if the return value is truthy
+    !allowed.include? req.ip
+  end
+  
 end
