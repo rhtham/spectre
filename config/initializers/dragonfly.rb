@@ -12,16 +12,16 @@ Dragonfly.app.configure do
   # If you want to use S3 to store your screenshots (if you're hosting on Heroku), comment the next section
   # and uncomment the S3 datastore section.
 
-#if ENV["IP_WHITELIST"].present?
-  datastore :file,
-  root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-  server_root: Rails.root.join('public')
-#else
-#  datastore :s3,
-#    bucket_name: ENV["S3_BUCKET"],
-#    access_key_id: ENV["S3_ACCESS_KEY"],
-#    secret_access_key: ENV["S3_SECRET_ACCESS_KEY"]
-#end
+
+#  datastore :file,
+#  root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+#  server_root: Rails.root.join('public')
+
+  datastore :s3,
+    bucket_name: ENV["S3_BUCKET"],
+    access_key_id: ENV["S3_ACCESS_KEY"],
+    secret_access_key: ENV["S3_SECRET_ACCESS_KEY"]
+
 end
 
 # Logger
