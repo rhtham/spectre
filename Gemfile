@@ -26,6 +26,9 @@ gem 'image_size'
 # Adding rack attach to whitelist IP
 gem 'rack-attack'
 
+# Use Terser as the JavaScript compressor (supports ES6+)
+gem 'terser', '~> 1.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
