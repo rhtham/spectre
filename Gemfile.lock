@@ -150,7 +150,9 @@ GEM
     factory_girl_rails (4.9.0)
       factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
+    ffi (1.17.1)
     ffi (1.17.1-x64-mingw-ucrt)
+    ffi (1.17.1-x86_64-linux-gnu)
     fog-aws (3.30.0)
       base64 (~> 0.2.0)
       fog-core (~> 2.6)
@@ -215,6 +217,7 @@ GEM
     mime-types-data (3.2025.0318)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.8)
     minitest (5.25.5)
     multi_json (1.15.0)
     multi_test (1.1.0)
@@ -230,8 +233,14 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.7.4)
+    nokogiri (1.15.7)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.15.7-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.15.7-x86_64-linux)
+      racc (~> 1.4)
+    pg (1.5.9)
     pg (1.5.9-x64-mingw-ucrt)
     poltergeist (1.18.1)
       capybara (>= 2.1, < 4)
@@ -359,6 +368,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    win32-api (1.10.1)
     win32-api (1.10.1-universal-mingw32)
     win32-process (0.10.0)
       ffi (>= 1.0.0)
@@ -372,7 +382,9 @@ GEM
     zeitwerk (2.7.2)
 
 PLATFORMS
+  ruby
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   byebug

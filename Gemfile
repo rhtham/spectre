@@ -42,6 +42,11 @@ platforms :mswin, :mingw, :x64_mingw do
   gem 'win32-process'
 end
 
+# Ensure compatibility with different platforms
+platforms :ruby, :x64_mingw_ucrt, :x86_64_linux do
+  # Platform-specific gems can go here
+end
+
 # Use mini_magick for all platforms (including Windows)
 gem 'mini_magick', '~> 4.12.0'
 
