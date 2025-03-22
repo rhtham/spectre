@@ -6,7 +6,7 @@ gem 'rails', '~> 7.0.8'  # Update to latest 7.0.x
 gem 'pg', '~> 1.5.4'  # Latest version with better Windows support
 gem 'sass-rails', '~> 6.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'jsbundling-rails'
+gem 'jsbundling-rails', '~> 1.3', '>= 1.3.1'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

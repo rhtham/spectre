@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+YARN_VERSION=$(cat package.json | grep packageManager | cut -d' ' -f2 | cut -d'@' -f2 || echo "1.22.22")
+echo "Using yarn version: $YARN_VERSION"
+
+if [ ! -f "./.yarn/releases/yarn-${YARN_VERSION}.cjs" ]; then
+  echo "Downloading yarn version ${YARN_VERSION}"
+  mkdir -p ./.yarn/releases
+  curl -o ./.yarn/releases/yarn-${YARN_VERSION}.cjs -L https://github.com/yarnpkg/yarn/releases/download/v${YARN_VERSION}/yarn-${YARN_VERSION}.js
+fi
+
+node ./.yarn/releases/yarn-${YARN_VERSION}.cjs "$@"
