@@ -49,11 +49,3 @@ Kernel.define_singleton_method(:require) do |path|
     original_require.call(path)  # Call the original require for other files
   end
 end
-
-# Create a simple task to validate the environment
-namespace :heroku do
-  desc "Validate the environment for Heroku deployment"
-  task :check do
-    puts "Environment check passed!"
-  end
-end
