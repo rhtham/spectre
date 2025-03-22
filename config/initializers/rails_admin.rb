@@ -19,6 +19,9 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
+  # Set the asset source to sprockets (since that's mentioned in the error)
+  config.asset_source = :sprockets
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

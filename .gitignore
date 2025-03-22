@@ -21,3 +21,8 @@ public/system/
 .idea
 .env
 .byebug_history
+
+# JavaScript
+/node_modules
+/app/assets/builds/*
+!/app/assets/builds/.keep
