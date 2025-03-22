@@ -1,9 +1,11 @@
 {
   "name": "Spectre",
-  "description": "A web application to diff screenshots",
+  "description": "Spectre is a web application to diff screenshots.",
   "keywords": [
-    "testing",
-    "ui"
+    "ruby",
+    "rails",
+    "screenshots",
+    "visual regression testing"
   ],
   "repository": "https://github.com/wearefriday/spectre",
   "success_url": "/",
@@ -18,10 +20,13 @@
   "image": "heroku/ruby",
   "addons": [
     {
-      "plan": "heroku-postgresql",
+      "plan": "heroku-postgresql:essential-0",
       "options": {
-        "version": "13"
+        "version": "14"
       }
     }
-  ]
+  ],
+  "env": {
+    // ...existing environment variables...
+  }
 }

@@ -1,22 +1,23 @@
 default: &default
   adapter: postgresql
-  encoding: utf8
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] || ENV['DATABASE_PASSWORD'] %>
-  pool: 5
-  timeout: 5000
+  encoding: unicode
+  # Specify PostgreSQL version 14 for Heroku compatibility
+  postgresql_version: '14'
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: spectre_development
 
-test: &test
+test:
   <<: *default
   database: spectre_test
 
-cucumber:
-  <<: *test
-
 production:
   <<: *default
+  database: spectre_production
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] || ENV['DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
