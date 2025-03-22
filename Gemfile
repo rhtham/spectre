@@ -1,20 +1,22 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+ruby '3.2.2'
+
+gem 'rails', '~> 7.0.0'
 gem 'pg'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 6.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'jsbundling-rails'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+# gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'rails_admin'
+gem 'rails_admin', '~> 3.1.0'  # Update to version compatible with Rails 7
 gem 'sequenced'
 gem 'dragonfly', '~> 1.0.12'
 gem 'dragonfly-s3_data_store'
@@ -42,8 +44,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'web-console', '~> 4.2'
   gem 'spring'
 end
 
@@ -55,8 +56,16 @@ end
 
 group :demo_test_run do
   gem 'capybara'
-  gem 'poltergeist'
+  # Removed duplicate poltergeist entry
   gem 'rmagick'
   gem 'rspec'
   gem 'spectre_client', git: 'https://github.com/wearefriday/spectre_client.git'
 end
+
+gem 'nokogiri', '~> 1.15.0'  # Add explicit version constraint
+
+# No changes to the Gemfile itself, but run the following command:
+# 
+# $ bundle update --bundler
+# 
+# This will regenerate the Gemfile.lock with Bundler 2.6.6.
