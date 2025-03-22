@@ -11,5 +11,8 @@ module Spectre
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.active_storage.draw_routes = false  # Disable Active Storage routes
+    config.active_storage.service = nil
+    config.active_storage.enabled = false
   end
 end

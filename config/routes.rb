@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   resources :tests, only: [:update, :new, :create]
 
   get '/baselines/:key', to: 'baselines#show', as: :baseline
+
+  # Remove or comment out this line if it exists:
+  # Rails.application.routes.draw do
+  #   active_storage_direct_uploads
+  # end
 end

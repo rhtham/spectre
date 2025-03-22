@@ -20,7 +20,8 @@ Dragonfly.app.configure do
   datastore :s3,
     bucket_name: ENV["S3_BUCKET"],
     access_key_id: ENV["S3_ACCESS_KEY"],
-    secret_access_key: ENV["S3_SECRET_ACCESS_KEY"]
+    secret_access_key: ENV["S3_SECRET_ACCESS_KEY"],
+    region: ENV["S3_REGION"] || 'us-east-1'  # Add region parameter, defaulting to us-east-1
 
   # Make sure verify_urls is properly set for Rails 7
   verify_urls true

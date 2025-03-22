@@ -22,6 +22,7 @@ gem 'sequenced'
 gem 'dragonfly', '~> 1.4.0'  # Updated for Rails 7 compatibility
 gem 'dragonfly-s3_data_store', '~> 1.3.0'  # Correct version available on RubyGems
 gem 'image_size'
+gem 'aws-sdk-s3', require: false  # Only if using S3 for Active Storage
 
 # Adding rack attach to whitelist IP
 gem 'rack-attack'
