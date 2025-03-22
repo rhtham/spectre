@@ -19,8 +19,8 @@ gem 'sdoc', '~> 2.6', group: :doc
 
 gem 'rails_admin', '~> 3.1.0'  # Update to version compatible with Rails 7
 gem 'sequenced'
-gem 'dragonfly', '~> 1.0.12'
-gem 'dragonfly-s3_data_store'
+gem 'dragonfly', '~> 1.4.0'  # Updated for Rails 7 compatibility
+gem 'dragonfly-s3_data_store', '~> 1.3.0'  # Correct version available on RubyGems
 gem 'image_size'
 
 # Adding rack attach to whitelist IP
@@ -58,7 +58,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rest-client'
   gem 'rspec-rails', '~> 6.0'  # Update to latest version
-  gem "factory_girl_rails", "~> 4.9.0"
+  gem 'factory_bot_rails', '~> 6.2'  # Updated replacement for factory_girl_rails
 end
 
 group :development do
@@ -69,7 +69,8 @@ end
 
 group :test do
   gem 'cucumber-rails', '~> 3.0', require: false
-  gem 'database_cleaner'
+  gem 'database_cleaner-active_record', '~> 2.1'  # Updated for Rails 7 compatibility
+  # Consider replacing poltergeist with selenium-webdriver as poltergeist is unmaintained
   gem 'poltergeist', '~> 1.18'
 end
 

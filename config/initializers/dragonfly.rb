@@ -22,6 +22,9 @@ Dragonfly.app.configure do
     access_key_id: ENV["S3_ACCESS_KEY"],
     secret_access_key: ENV["S3_SECRET_ACCESS_KEY"]
 
+  # Make sure verify_urls is properly set for Rails 7
+  verify_urls true
+
 end
 
 # Logger
@@ -31,7 +34,7 @@ Dragonfly.logger = Rails.logger
 Rails.application.middleware.use Dragonfly::Middleware
 
 # Add model functionality
-if defined?(ActiveRecord::Base)
-  ActiveRecord::Base.extend Dragonfly::Model
-  ActiveRecord::Base.extend Dragonfly::Model::Validations
+ActiveSupport.on_load(:active_record) do
+  extend Dragonfly::Model
+  extend Dragonfly::Model::Validations
 end
