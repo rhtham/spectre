@@ -1,7 +1,14 @@
 module ApplicationHelper
 
   def thumbnail(thumbnail)
-    "<img class='lazy' data-original='#{thumbnail.url}' width='#{thumbnail.width}' height='#{thumbnail.height}' />".html_safe
+    content_tag(:img, nil, 
+      class: 'lazy',
+      src: thumbnail.url,
+      'data-original': thumbnail.url,
+      width: thumbnail.width,
+      height: thumbnail.height,
+      alt: "Thumbnail image"
+    )
   end
 
   def format_date(date)
