@@ -1,4 +1,8 @@
-language: ruby
+language:before_script:
+  - psql -c 'create database spectre_test;' -U postgres
+addons:
+  postgresql: "17"
+after_success:
 rvm:
   - 2.7
 before_install:
@@ -10,6 +14,6 @@ services:
 before_script:
   - psql -c 'create database spectre_test;' -U postgres
 addons:
-  postgresql: "9.6"
+  postgresql: "17"
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD; docker build -t wearefriday/spectre .; docker push wearefriday/spectre; fi
