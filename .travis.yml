@@ -1,8 +1,4 @@
-language:before_script:
-  - psql -c 'create database spectre_test;' -U postgres
-addons:
-  postgresql: "17"
-after_success:
+language: ruby
 rvm:
   - 2.7
 before_install:

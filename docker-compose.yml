@@ -1,5 +1,3 @@
-version: "2"
-
 services:
   app:
     build: .
@@ -12,14 +10,15 @@ services:
       - RAILS_SERVE_STATIC_FILES=true
       - RAILS_LOG_TO_STDOUT=true
       - DATABASE_URL=postgresql://postgres@db/spectre
-      - DATABASE_USERNAME=
+      - DATABASE_USERNAME=spectre
       - POSTGRES_PASSWORD=somepassword
       - DOMAIN_NAME=app
       - PORT=:3000
       - PROTOCOL=http://
+      - SECRET_KEY_BASE=a1b2c3d4e5f6789012345678901234567890123456789012345678901234567890123456789012345678901234567890
     volumes:
      - .:/app
-    command: bash -c "rm -f /app/tmp/pids/*.pid && rake assets:precompile && SECRET_KEY_BASE=`rake secret` rails server -p 3000"
+    command: bash -c "rm -f /app/tmp/pids/*.pid && rake assets:precompile && rails server -p 3000"
 
   db:
     image: postgres:17
@@ -31,7 +30,7 @@ services:
      - data-db:/var/lib/postgresql/data
     environment:
      - POSTGRES_DB=spectre
-      - POSTGRES_PASSWORD=somepassword
+     - POSTGRES_PASSWORD=somepassword
 
 volumes:
   data-db: {}
