@@ -1,8 +1,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # Specify PostgreSQL version 14 for Heroku compatibility
-  postgresql_version: '14'
+  # Specify PostgreSQL version 17 for Heroku compatibility
+  postgresql_version: '17'
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>

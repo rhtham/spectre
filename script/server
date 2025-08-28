@@ -1,5 +1,1 @@
-#!/bin/sh
-
-set -e
-
-bundle exec puma -C config/puma.rb
+﻿#!/bin/shset -ebundle exec puma -C config/puma.rb
